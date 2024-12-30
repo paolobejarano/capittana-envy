@@ -205,11 +205,11 @@
                         data-has-gift-wrap="{{ has_gift_wrap }}"
                         data-gift-wrap-variant-id="{{ settings.giftwrap_product_selector.selected_or_first_available_variant.id }}"
                       >
-                        <div class="cart-drawer__product-card--quantity">
+                        <div class="cart-drawer__product-card--quantity" style="display: none;">
                           <button
                             data-cart-quantity-button
-                            name="minus" 
-                            type="button" 
+                            name="minus"
+                            type="button"
                             aria-label="{{ 'general.accessibility.quantity.decrease_quantity' | t }} - {{ item.product.title }}"
                             class="cart-drawer__product-card--quantity--button"
                           >
@@ -231,9 +231,9 @@
 
                           <button
                             data-cart-quantity-button
-                            name="plus" 
-                            type="button" 
-                            aria-label="{{ 'general.accessibility.quantity.increase_quantity' | t }} - {{ item.product.title }}" 
+                            name="plus"
+                            type="button"
+                            aria-label="{{ 'general.accessibility.quantity.increase_quantity' | t }} - {{ item.product.title }}"
                             class="cart-drawer__product-card--quantity--button"
                           >
                             {% render 'theme-icon' with icon: 'plus', iconAttributes: 'aria-hidden="true"' %}
@@ -488,6 +488,70 @@
                 form="CartDrawer-Form"
               >{{ 'cart.general.checkout' | t }}</button>
             </div>
+
+            <!-- Payment methods logos -->
+            <div class="card-wallet-content align-center d-flex justify-between mx-auto" style="margin-top: 20px;">
+              <div class="card-wallet-item">
+                <img src="https://iziweb001.s3.amazonaws.com/content-manager/wallets/primary/47" alt="logo de Visa" height="18">
+              </div>
+              <div class="card-wallet-item">
+                <img src="https://iziweb001.s3.amazonaws.com/content-manager/wallets/primary/48" alt="logo de Mastercard" height="20">
+              </div>
+              <div class="card-wallet-item">
+                <img src="https://iziweb001.s3.amazonaws.com/content-manager/wallets/primary/49" alt="logo de American Express" height="22">
+              </div>
+              <div class="card-wallet-item">
+                <img src="https://iziweb001.s3.amazonaws.com/content-manager/wallets/primary/50" alt="logo de Dinners Club" height="22">
+              </div>
+              <div class="card-wallet-item">
+                <img src="https://iziweb001.s3.amazonaws.com/content-manager/wallets/secondary/18" alt="logo de  Plin" height="25">
+              </div>
+              <div class="card-wallet-item">
+                <img src="https://iziweb001b.s3.amazonaws.com/content-manager/wallets/primary/73" alt="logo de  Yape" height="25">
+              </div>
+            </div>
+
+            <style>
+                .d-flex {
+                    display: flex;
+                }
+
+                .align-center {
+                    align-items: center;
+                }
+
+                .justify-between {
+                    justify-content: space-between;
+                }
+
+                .v-application .mx-auto {
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                }
+                .v-application .align-center {
+                    align-items: center !important;
+                }
+                .v-application .justify-center {
+                    justify-content: center !important;
+                }
+                .v-application .d-flex {
+                    display: flex !important
+                ;
+                }
+                @media screen and (min-width: 600px) {
+                    .card-wallet-content {
+                        width: 80%;
+                    }
+                }
+                .card-wallet-content {
+                    width: 100%
+                }
+
+                .card-wallet-content div {
+                    margin-top: 14px;
+                }
+            </style>
+
           </div>
         </footer>
       {% endunless %}
