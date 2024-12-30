@@ -15,6 +15,76 @@
   {{ 'theme.min.css' | asset_url | stylesheet_tag: preload: true }}
   {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
 
+  <!-- Capittana fonts -->
+  {% style %}
+    @font-face {
+    font-family: 'OsnovaPro';
+    font-style: normal;
+    font-weight: bold;
+    src: url({{ 'OsnovaPro-Bold.eot' | asset_url }});
+    src: url({{ 'OsnovaPro-Bold.eot?#iefix' | asset_url }}) format('embedded-opentype'),
+    url({{ 'OsnovaPro-Bold.otf' | asset_url }}) format('otf'),
+    url({{ 'OsnovaPro-Bold.woff' | asset_url }}) format('woff'),
+    url({{ 'OsnovaPro-Bold.woff2' | asset_url }}) format('woff2');
+    }
+
+    @font-face {
+    font-family: 'OsnovaPro';
+    font-style: normal;
+    font-weight: 400;
+    src: url({{ 'OsnovaPro.eot' | asset_url }});
+    src: url({{ 'OsnovaPro.eot?#iefix' | asset_url }}) format('embedded-opentype'),
+    url({{ 'OsnovaPro.otf' | asset_url }}) format('otf'),
+    url({{ 'OsnovaPro.woff' | asset_url }}) format('woff'),
+    url({{ 'OsnovaPro.woff2' | asset_url }}) format('woff2');
+    }
+
+    @font-face {
+    font-family: 'OsnovaPro';
+    font-style: normal;
+    font-weight: 300;
+    src: url({{ 'OsnovaProLight.eot' | asset_url }});
+    src: url({{ 'OsnovaProLight.eot?#iefix' | asset_url }}) format('embedded-opentype'),
+    url({{ 'OsnovaProLight.otf' | asset_url }}) format('otf'),
+    url({{ 'OsnovaProLight.woff' | asset_url }}) format('woff'),
+    url({{ 'OsnovaProLight.woff2' | asset_url }}) format('woff2');
+    }
+
+    @font-face {
+    font-family: 'Gazpacho';
+    src: url({{  'Gazpacho-Regular.eot' | asset_url }});
+    src: url({{  'Gazpacho-Regular.eot?#iefix' | asset_url }}) format('embedded-opentype'),
+    url({{  'Gazpacho-Regular.woff2' | asset_url }}) format('woff2'),
+    url({{  'Gazpacho-Regular.woff'  | asset_url }}) format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    }
+
+    @font-face {
+    font-family: 'Gazpacho';
+    src: url({{  'Gazpacho-Light.eot' | asset_url }});
+    src: url({{  'Gazpacho-Light.eot?#iefix' | asset_url }}) format('embedded-opentype'),
+    url({{  'Gazpacho-Light.woff2' | asset_url }}) format('woff2'),
+    url({{  'Gazpacho-Light.woff' | asset_url }}) format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+    }
+
+    @font-face {
+    font-family: 'Gazpacho';
+    src: url({{  'Gazpacho-Bold.eot' | asset_url }});
+    src: url({{  'Gazpacho-Bold.eot?#iefix' | asset_url }}) format('embedded-opentype'),
+    url({{  'Gazpacho-Bold.woff2' | asset_url }}) format('woff2'),
+    url({{  'Gazpacho-Bold.woff' | asset_url }}) format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+    }
+
+  {% endstyle %}
+
   {% if settings.favicon != blank %}
     <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 180, height: 180, crop: 'center' }}" type="image/png">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ settings.favicon | image_url: width: 180, height: 180, crop: 'center' }}">
