@@ -1,1 +1,11 @@
 /* Place any CSS overrides in this file. */
+
+/* All titles in Gazpacho font */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Gazpacho';
+}
+
+/* All text in OsnovaPro font */
+p, a, li {
+    font-family: OsnovaPro;
+}
