@@ -372,16 +372,284 @@
 
                       {% if show_size_guide_below_options %}
                         <div data-size-guide-below-options{% if product.has_only_default_variant %} class="no-spacing"{% endif %}>
-                          <safe-load-scripts class="hidden">
-                            <script src="{{ 'component-size-guide-link.js' | asset_url }}" defer="defer" type="module" data-flow-load-key="size-guide-link"></script>
-                          </safe-load-scripts>
                         
                           <size-guide-link id="size-guide" class="text-link-animated">
-                            <a data-size-guide-link id="size-guide-link" tabindex="0" href="{{ block.settings.size_guide_page.url }}">{{ block.settings.size_guide_label | default: block.settings.size_guide_page.title }}</a>
+                            <a data-size-guide-link id="open-modal" href="#" tabindex="0">{{ block.settings.size_guide_label | default: block.settings.size_guide_page.title }}</a>
                           </size-guide-link>
                         </div>
                       {% endif %}
                     </div>
+
+                  <!-- Modal -->
+                  <div id="simple-modal" class="modal hidden">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5>Guía de tallas</h5>
+                        <button id="close-modal" class="close-btn">&times;</button>
+                      </div>
+                      <div class="modal-body">
+                        <table class="size-chart">
+                          <!-- Primera Fila -->
+                          <tbody style="font-weight: 300;">
+                          <tr>
+                            <td colspan="2" style="background-color: transparent; border-top: none; border-left: none;"></td>
+                            <td ></td>
+                            <td>PERU</td>
+                            <td>USA</td>
+                            <td>EUROPE</td>
+                          </tr>
+                          <tr style="font-weight: 300; font-size: smaller;">
+                            <th rowspan="6" span="2" class="image-cell" >
+                              <img src="{{ 'top.svg' | asset_url }}" alt="bra" style="max-width: 35px;" >
+                              <p style="color: rgb(90, 132, 174); font-weight: 400;">TOP</p>
+                            </th>
+                            <td style="border-bottom: none;"></td>
+                            <td >CONTOUR (CM)</td>
+                            <td >BRA SIZE</td>
+                            <td >BRA SIZE</td>
+                            <td >BRA SIZE</td>
+
+                          </tr>
+                          <tr class="debajo">
+                            <td class="final" style="color: rgb(90, 132, 174); font-weight: 400;">XS</td>
+                            <td>75-80</td>
+                            <td>30A  </td>
+                            <td>30A-32A </td>
+                            <td>0B-1B</td>
+                          </tr>
+                          <tr class="debajo">
+                            <td style="color: rgb(90, 132, 174); font-weight: 400;">S</td>
+                            <td>80-85</td>
+                            <td>32B  </td>
+                            <td>32B-34A </td>
+                            <td>1C-2B</td>
+                          </tr>
+                          <tr class="debajo">
+                            <td style="color: rgb(90, 132, 174); font-weight: 400;">M</td>
+                            <td>85-95</td>
+                            <td>34B  </td>
+                            <td>34B-32C </td>
+                            <td>2C-1D</td>
+                          </tr>
+                          <tr class="debajo">
+                            <td style="color: rgb(90, 132, 174); font-weight: 400;">L</td>
+                            <td>95-105</td>
+                            <td>36C  </td>
+                            <td>34C-36B </td>
+                            <td>2D-3C</td>
+                          </tr>
+                          <tr class="debajo">
+                            <td style="color: rgb(90, 132, 174); font-weight: 400;">XL</td>
+                            <td>105-110</td>
+                            <td>38 C/D  </td>
+                            <td>36C-38B </td>
+                            <td>3D-4C</td>
+                          </tr>
+
+                          <tr style="font-size: smaller;">
+                            <th rowspan="6" span="2" class="image-cell">
+                              <img src="{{ 'bottom.svg' | asset_url }}" alt="BOTTOM">
+                              <p style="color: rgb(90, 132, 174); font-weight: 400;">BOTTOM</p>
+                            </th>
+                            <td class="split-cell" style="border-bottom: none;"></td>
+                            <td class="split-cell">CONTOUR (CM)</td>
+                            <td class="split-cell">BOTTOM SIZE</td>
+                            <td class="split-cell">BOTTOM SIZE</td>
+                            <td class="split-cell">BOTTOM SIZE</td>
+
+                          </tr>
+                          <tr class="debajo">
+                            <td style="color: rgb(90, 132, 174); font-weight: 400;">XS</td>
+                            <td>85 - 90</td>
+                            <td>25 - 26  </td>
+                            <td>2 - 4 </td>
+                            <td>34 - 36</td>
+                          </tr>
+                          <tr class="debajo">
+                            <td style="color: rgb(90, 132, 174); font-weight: 400;">S</td>
+                            <td>90 - 95</td>
+                            <td>27 - 28  </td>
+                            <td>4 - 6 </td>
+                            <td>38 - 40</td>
+                          </tr>
+                          <tr class="debajo">
+                            <td style="color: rgb(90, 132, 174); font-weight: 400;">M</td>
+                            <td>95 - 100</td>
+                            <td>29 - 30  </td>
+                            <td>6 - 8 </td>
+                            <td>42 - 44 </td>
+                          </tr>
+                          <tr class="debajo">
+                            <td style="color: rgb(90, 132, 174); font-weight: 400;">L</td>
+                            <td>100 - 105</td>
+                            <td>32  </td>
+                            <td>8 - 10 </td>
+                            <td>46 - 48 </td>
+                          </tr>
+                          <tr class="final">
+                            <td style="color: rgb(90, 132, 174); font-weight: 400;">XL</td>
+                            <td>105+</td>
+                            <td>34 </td>
+                            <td>10 - 12 </td>
+                            <td>50 - 52</td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Styles -->
+                  <style>
+                      /* Modal Styles */
+                      .modal {
+                          position: fixed;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          background-color: rgba(0, 0, 0, 0.5);
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          opacity: 0;
+                          visibility: hidden;
+                          transition: opacity 0.3s ease, visibility 0.3s ease;
+                      }
+
+                      .modal-content {
+                          background: white;
+                          width: 80%;
+                          max-width: 500px;
+                          border-radius: 8px;
+                          overflow: hidden;
+                          animation: fadeIn 0.3s ease;
+                      }
+
+                      .modal-header {
+                          padding: 10px;
+                          background-color: #f4f4f4;
+                          display: flex;
+                          justify-content: space-between;
+                          align-items: center;
+                          border-bottom: 1px solid #ccc;
+                      }
+
+                      .modal-header h5 {
+                          margin: 0;
+                      }
+
+                      .modal-body {
+                          padding: 15px;
+                      }
+
+                      .close-btn {
+                          background: none;
+                          border: none;
+                          font-size: 20px;
+                          cursor: pointer;
+                      }
+
+                      /* Visible Modal */
+                      .modal.visible {
+                          opacity: 1;
+                          visibility: visible;
+                          z-index: 3;
+                      }
+
+                      /* Animation */
+                      @keyframes fadeIn {
+                          from {
+                              opacity: 0;
+                              transform: scale(0.9);
+                          }
+                          to {
+                              opacity: 1;
+                              transform: scale(1);
+                          }
+                      }
+
+                      .size-chart {
+                          max-width:1000px;
+                          border-collapse: collapse;
+                          margin: auto;
+                      }
+
+                      .size-chart td, .size-chart th {
+                          border: 1px solid rgb(90, 132, 174); /* Color de las líneas */
+                          text-align: center;
+                          padding: 2px;
+                          vertical-align: middle;
+                      }
+
+                      .size-chart td.image-cell {
+                          text-align: center;
+                          padding: 20px;
+                      }
+
+                      .size-chart td img {
+                          max-width: 50px;
+                          display: block;
+                          margin: 0 auto 10px;
+                      }
+
+                      .size-chart td p {
+                          margin: 0;
+                      }
+
+                      /* Estilos para la primera fila */
+                      .size-chart tr:first-child td {
+                          background-color: rgb(90, 132, 174); /* Fondo de la primera fila */
+                          color: white; /* Texto en blanco */
+                      }
+
+                      /* Estilo para dividir celdas en filas internas */
+                      .split-cell {
+                          text-align: left;
+                      }
+
+                      .size-chart td[colspan="2"] {
+                          background-color: #f0f0f0;
+                      }
+                      .debajo td {
+                          border-bottom: none; /* Eliminar el borde */
+                          border-top: none; /* Eliminar el borde */
+                      }
+                      .final td{
+                          border-top: none;
+                      }
+                      .arriba td{
+                          border-bottom: none;
+                      }
+                  </style>
+
+                  <!-- JavaScript -->
+                  <script>
+                    const modal = document.getElementById('simple-modal');
+                    const openModalLink = document.getElementById('open-modal');
+                    const closeModalButton = document.getElementById('close-modal');
+
+                    // Open modal
+                    openModalLink.addEventListener('click', (event) => {
+                      event.preventDefault();
+                      modal.classList.add('visible');
+                      modal.classList.remove('hidden');
+                    });
+
+                    // Close modal
+                    closeModalButton.addEventListener('click', () => {
+                      modal.classList.remove('visible');
+                      modal.classList.add('hidden');
+                    });
+
+                    // Close modal when clicking outside
+                    modal.addEventListener('click', (event) => {
+                      if (event.target === modal) {
+                        modal.classList.remove('visible');
+                        modal.classList.add('hidden');
+                      }
+                    });
+                  </script>
 
                   {% when 'complementary-products' %}
                     {% comment %} ===== COMPLEMENTARY PRODUCTS BLOCK ===== {% endcomment %}
