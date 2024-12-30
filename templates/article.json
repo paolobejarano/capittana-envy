@@ -1,0 +1,153 @@
+{
+  "sections": {
+    "main": {
+      "type": "template--article",
+      "settings": {
+        "article-sidebar-description": "",
+        "blog-sidebar-link": "",
+        "show_blog_tags": false,
+        "show_recent_posts": true,
+        "blog_show_date": true
+      }
+    },
+    "cce543fc-94ab-40fc-92e1-cf236dc01175": {
+      "type": "rich-text",
+      "blocks": {
+        "f31f73a5-3f26-4c85-b95d-dcfdec010969": {
+          "type": "button",
+          "settings": {
+            "button_text": "BACK TO THE BLOG"
+          }
+        }
+      },
+      "block_order": [
+        "f31f73a5-3f26-4c85-b95d-dcfdec010969"
+      ],
+      "settings": {
+        "section_width": "narrow",
+        "text_alignment_desktop": "center",
+        "text_alignment_mobile": "center",
+        "colors": "light"
+      }
+    },
+    "dc79d244-ac5b-46f5-92da-a8520f8e6400": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured collection",
+        "show_view_all": false,
+        "grid-desktop": 4,
+        "grid-mobile": "2",
+        "colors": "white"
+      }
+    },
+    "08cee6e3-0651-48fb-8638-72af975a0429": {
+      "type": "gallery",
+      "blocks": {
+        "template--14982170017882__08cee6e3-0651-48fb-8638-72af975a0429-image-1": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "overlay-btn-text": "",
+            "show-gradient-overlay": false
+          }
+        },
+        "template--14982170017882__08cee6e3-0651-48fb-8638-72af975a0429-image-2": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "overlay-btn-text": "",
+            "show-gradient-overlay": false
+          }
+        },
+        "template--14982170017882__08cee6e3-0651-48fb-8638-72af975a0429-image-3": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "overlay-btn-text": "",
+            "show-gradient-overlay": false
+          }
+        },
+        "fd4a6d20-753d-4c96-9fca-53fc189fbd21": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "overlay-btn-text": "",
+            "show-gradient-overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14982170017882__08cee6e3-0651-48fb-8638-72af975a0429-image-1",
+        "template--14982170017882__08cee6e3-0651-48fb-8638-72af975a0429-image-2",
+        "template--14982170017882__08cee6e3-0651-48fb-8638-72af975a0429-image-3",
+        "fd4a6d20-753d-4c96-9fca-53fc189fbd21"
+      ],
+      "settings": {
+        "title": "Follow us",
+        "content-position": "hover",
+        "section-width": "full",
+        "remove-spacing": false,
+        "full-width": false,
+        "colors": "light"
+      }
+    },
+    "77ad4d56-b13e-4630-82dd-091f2df4e635": {
+      "type": "gallery",
+      "blocks": {
+        "template--14982170017882__77ad4d56-b13e-4630-82dd-091f2df4e635-image-1": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "overlay-btn-text": "",
+            "show-gradient-overlay": false
+          }
+        },
+        "template--14982170017882__77ad4d56-b13e-4630-82dd-091f2df4e635-image-2": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "overlay-btn-text": "",
+            "show-gradient-overlay": false
+          }
+        },
+        "template--14982170017882__77ad4d56-b13e-4630-82dd-091f2df4e635-image-3": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "overlay-btn-text": "",
+            "show-gradient-overlay": false
+          }
+        },
+        "742b0576-c684-4fdb-b112-d9103841961b": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "overlay-btn-text": "",
+            "show-gradient-overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14982170017882__77ad4d56-b13e-4630-82dd-091f2df4e635-image-1",
+        "template--14982170017882__77ad4d56-b13e-4630-82dd-091f2df4e635-image-2",
+        "template--14982170017882__77ad4d56-b13e-4630-82dd-091f2df4e635-image-3",
+        "742b0576-c684-4fdb-b112-d9103841961b"
+      ],
+      "settings": {
+        "title": "",
+        "content-position": "below-image",
+        "section-width": "full",
+        "remove-spacing": true,
+        "full-width": false,
+        "colors": "white"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cce543fc-94ab-40fc-92e1-cf236dc01175",
+    "dc79d244-ac5b-46f5-92da-a8520f8e6400",
+    "08cee6e3-0651-48fb-8638-72af975a0429",
+    "77ad4d56-b13e-4630-82dd-091f2df4e635"
+  ]
+}

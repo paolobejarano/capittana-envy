@@ -1,0 +1,99 @@
+{
+  "sections": {
+    "main": {
+      "type": "template--collections-list",
+      "settings": {
+        "banner-image-size": "20vh",
+        "parallax": true,
+        "layout": "preview",
+        "items_per_row": 3,
+        "show_options": "all"
+      }
+    },
+    "scrolling_banner_Hj7NDC": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "image_AggjAR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Image-5.svg",
+            "height_desktop": 200,
+            "height_mobile": 100,
+            "link": ""
+          }
+        },
+        "image_pBmADm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Image-2.svg",
+            "height_desktop": 200,
+            "height_mobile": 100,
+            "link": ""
+          }
+        },
+        "image_xkLncU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Image-3.svg",
+            "height_desktop": 200,
+            "height_mobile": 100,
+            "link": ""
+          }
+        },
+        "image_XT6yYM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Image-1.svg",
+            "height_desktop": 200,
+            "height_mobile": 100,
+            "link": ""
+          }
+        },
+        "image_aXbAKa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Image.svg",
+            "height_desktop": 200,
+            "height_mobile": 100,
+            "link": ""
+          }
+        },
+        "image_e7hFyC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Image-4.svg",
+            "height_desktop": 200,
+            "height_mobile": 100,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_AggjAR",
+        "image_pBmADm",
+        "image_xkLncU",
+        "image_XT6yYM",
+        "image_aXbAKa",
+        "image_e7hFyC"
+      ],
+      "settings": {
+        "title": "As seen in",
+        "description": "",
+        "show_fade": true,
+        "borders": false,
+        "animation_direction": "normal",
+        "animation_speed": 60,
+        "section_padding_top": 0,
+        "section_padding_bottom": 60,
+        "space_between_blocks_desktop": 30,
+        "space_between_blocks_mobile": 20,
+        "rotate": "0",
+        "color_scheme": "white"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "scrolling_banner_Hj7NDC"
+  ]
+}
