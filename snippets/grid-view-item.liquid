@@ -122,6 +122,26 @@
             {% if img_alt == product.title %}
               {% assign img_alt = '' %}
             {% endif %}
+            {% unless product.has_only_default_variant and product.template_suffix == 'bundle' %}
+              {% for product_option in product.options_with_values %}
+                {%- if product_option.name contains 'Size' or product_option.name contains 'size' or product_option.name contains 'Talla' or product_option.name contains 'talla' -%}
+                  <div class="headding--size-products">
+                    <ul style="margin: 0; list-style-type:none;">
+                      {%- for variant in product.variants -%}
+                        <li class="{% if variant.available == false %}sold-out--option{% endif %}">
+                          {%- if variant.metafields.custom.variant_fron_title != blank -%}
+                            {{ variant.metafields.custom.variant_fron_title }}
+                          {%- else -%}
+                            {{ variant.title }}
+                          {%- endif -%}
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                    <div class="bg-blur"></div>
+                  </div>
+                {%- endif -%}
+              {% endfor -%}
+            {% endunless %}
             {% render 'responsive-image' with image, alt: img_alt, allow_stretch: image_stretch, blur: false, props: 'data-product-card-image', loading: loading %}
 
             {% comment %} Placeholder for swatch images {% endcomment %}
