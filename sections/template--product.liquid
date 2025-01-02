@@ -374,7 +374,7 @@
                         <div data-size-guide-below-options{% if product.has_only_default_variant %} class="no-spacing"{% endif %}>
                         
                           <size-guide-link id="size-guide" class="text-link-animated">
-                            <a data-size-guide-link id="open-modal" href="#" tabindex="0">{{ block.settings.size_guide_label | default: block.settings.size_guide_page.title }}</a>
+                            <a id="open-modal" style="cursor: pointer">{{ block.settings.size_guide_label | default: block.settings.size_guide_page.title }}</a>
                           </size-guide-link>
                         </div>
                       {% endif %}
