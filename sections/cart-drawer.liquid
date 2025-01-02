@@ -1,1 +1,175 @@
 {% render 'cart-drawer' %}
+
+{% schema %}
+{
+  "name": "Cart Drawer",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_free_shipping_bar",
+      "label": "Enable Free Shipping Bar",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sale_message",
+      "label": "Enable Sale Message",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_cart_products",
+      "label": "Enable Cart Products",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_checkout_button",
+      "label": "Enable Checkout Button",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_recommended_products",
+      "label": "Enable Recommended Products",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Your Cart"
+    },
+    {
+      "type": "number",
+      "id": "free_shipping_threshold_1",
+      "label": "Free shipping threshold 1",
+      "default": 200
+    },
+    {
+      "type": "number",
+      "id": "free_shipping_threshold_2",
+      "label": "Free shipping threshold 2",
+      "default": 700
+    },
+    {
+      "type": "number",
+      "id": "free_shipping_threshold_3",
+      "label": "Free shipping threshold 3",
+      "default": 900
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_success_1",
+      "label": "Free shipping success message 1",
+      "default": "Congrats! You get free standard shipping."
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_success_1_link",
+      "label": "Free shipping success message 1 URL",
+      "default": "Congrats! You get free standard shipping."
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_success_1_link_text",
+      "label": "Free shipping success message 1 URL Text",
+      "default": "Congrats! You get free standard shipping."
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_success_2",
+      "label": "Free shipping success message 2",
+      "default": "Congrats! You get free standard shipping."
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_success_3",
+      "label": "Free shipping success message 3",
+      "default": "Congrats! You get free standard shipping."
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_fail_before",
+      "label": "Free shipping fail message (before amount)",
+      "default": "Spend "
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_fail_after",
+      "label": "Free shipping fail message (after amount)",
+      "default": " more to get free shipping."
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_fail_after_2",
+      "label": "Free shipping fail message (after amount) 2",
+      "default": " more to get free shipping."
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_fail_after_3",
+      "label": "Free shipping fail message (after amount) 3",
+      "default": " more to get free shipping."
+    },
+    {
+      "type": "text",
+      "id": "remove_title",
+      "label": "Remove title",
+      "default": "Remove"
+    },
+    {
+      "type": "text",
+      "id": "total_title",
+      "label": "Total title",
+      "default": "Estimated total:"
+    },
+    {
+      "type": "text",
+      "id": "checkout_button_label",
+      "label": "Checkout button label",
+      "default": "Secure Checkout"
+    },
+    {
+      "type": "header",
+      "content": "Recommended products"
+    },
+    {
+      "type": "text",
+      "id": "recommended_title",
+      "label": "Title",
+      "default": "Recommended"
+    },
+    {
+      "type": "collection",
+      "id": "recommended_collection",
+      "label": "Collection",
+      "info": "Select a collection to pull recommended products from"
+    },
+    {
+      "type": "text",
+      "id": "recommended_atc_title",
+      "label": "Add to cart button title",
+      "default": "Add"
+    },
+    {
+      "type": "text",
+      "id": "empty_cart_message",
+      "label": "Empty cart message",
+      "default": "The cart is empty."
+    },
+    {
+      "type": "richtext",
+      "id": "extra__msg",
+      "label": "Message Extra",
+      "default": "<p>Products purchased with discount coupons or in SALE are not subjct to exchange or return</p>"
+    },
+    {
+      "type": "product_list",
+      "id": "additional_products",
+      "label": "You Like Products in Cart",
+      "limit": 12
+    }
+  ]
+}
+{% endschema %}

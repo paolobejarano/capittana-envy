@@ -34,6 +34,58 @@
       data-cart-dynamic-content="cart-body"
       data-cart-scroll-element
     >
+
+      {%- comment -%} Treshold progress bar {%- endcomment -%}
+      {%- if section.settings.enable_free_shipping_bar -%}
+        <div class="cart-popup-message-bar">
+          <div class="title">
+            <img draggable="false" role="img" class="emoji" alt="✨" src="https://s.w.org/images/core/emoji/14.0.0/svg/2728.svg">
+            {%- assign top_price_1 = section.settings.free_shipping_threshold_1 | times: 100 -%}
+            {%- assign top_price_2 = section.settings.free_shipping_threshold_2 | times: 100 -%}
+            {%- assign top_price_3 = section.settings.free_shipping_threshold_3 | times: 100 -%}
+            {%- if cart.original_total_price >= top_price_3 and top_price_3 > 0 -%}
+              {%- assign realTotal = top_price_3 | minus: cart.original_total_price -%}
+
+              {{ section.settings.free_shipping_success_3 }}
+              <img draggable="false" role="img" class="emoji" alt="✨" src="https://s.w.org/images/core/emoji/14.0.0/svg/2728.svg" >
+            {%- elsif cart.original_total_price >= top_price_2 and top_price_2 > 0 -%}
+              {%- assign realTotal = top_price_3 | minus: cart.original_total_price -%}
+
+              {{ section.settings.free_shipping_success_2 }}
+              <img draggable="false" role="img" class="emoji" alt="✨" src="https://s.w.org/images/core/emoji/14.0.0/svg/2728.svg" >
+              {%- if top_price_3 > 0 -%}
+                {{ section.settings.free_shipping_fail_before }} <span>{{ realTotal | money }}</span> {{ section.settings.free_shipping_fail_after_3 }}
+              {%- endif -%}
+            {%- elsif cart.original_total_price >= top_price_1 and top_price_1 > 0  -%}
+              {%- assign realTotal = top_price_2 | minus: cart.original_total_price -%}
+
+              {{ section.settings.free_shipping_success_1 }}
+              {% if section.settings.free_shipping_success_1_link %}
+                <a href="{{ section.settings.free_shipping_success_1_link }}"
+                   style="color: #5b85af; font-weight: 500; text-decoration: underline;">
+                  {{ section.settings.free_shipping_success_1_link_text }}
+                </a>
+              {% endif %}
+              <img draggable="false" role="img" class="emoji" alt="✨" src="https://s.w.org/images/core/emoji/14.0.0/svg/2728.svg" >
+              {%- if top_price_2 > 0 -%}
+                {{ section.settings.free_shipping_fail_before }} <span>{{ realTotal | money }}</span> {{ section.settings.free_shipping_fail_after_2 }}
+              {%- endif -%}
+            {%- else -%}
+              {%- assign realTotal = top_price_1 | minus: cart.original_total_price -%}
+
+              {{ section.settings.free_shipping_fail_before }} <span>{{ realTotal | money }}</span> {{ section.settings.free_shipping_fail_after }}
+            {%- endif -%}
+          </div>
+          <div class="bar-wrapper">
+            {%- liquid
+              assign realTotal =  cart.original_total_price | times: 100
+              assign realTotal =  realTotal | divided_by: top_price_3
+            %}
+            <span class="bar" style="width:{{ realTotal | divided_by: 100000 }}%;"></span>
+          </div>
+        </div>
+      {%- endif -%}
+
       <div class="global-drawer__body--content">
         {% if cart.item_count > 0 %}
           <form
